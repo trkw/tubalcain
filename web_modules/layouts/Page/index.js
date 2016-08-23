@@ -25,6 +25,8 @@ class Page extends Component {
       `Your page '${ __filename }' needs a title`
     )
 
+    const htmlAttributes = { lang: "ja" }
+
     const metaTitle = head.metaTitle ? head.metaTitle : head.title
 
     const meta = [
@@ -45,6 +47,7 @@ class Page extends Component {
     return (
       <div>
         <Helmet
+          htmlAttributes={ htmlAttributes }
           title={ metaTitle }
           meta={ meta }
         />

@@ -15,9 +15,12 @@ TopBarProgressIndicator.config({
 export default class PageLoading extends Component {
 
   render() {
+    const htmlAttributes = { lang: "ja" }
+
     return (
       <div>
         <Helmet
+          htmlAttributes={ htmlAttributes }
           title={ "Loading..." }
         />
         <TopBarProgressIndicator />
