@@ -33,6 +33,11 @@ build:
         name: pretest
         code: |
           npm run pretest
+
+    - script: 
+        name: Upload codecov results
+        code: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+
 deploy:
   steps:
     - script:
