@@ -16,6 +16,16 @@ box: node:5.10.0
 
     # - mongodb
     # http://devcenter.wercker.com/docs/services/mongodb.html
+
+submodule_checkout:
+  steps:
+    - install-packages:
+        packages: ssh git rsync
+    - script:
+        name: initialize git submodules
+        code: git submodule update --init --recursive
+    - copy-to-output
+
 build:
   # The steps that will be executed on build
   # Steps make up the actions in your pipeline
