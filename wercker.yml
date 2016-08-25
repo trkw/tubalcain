@@ -22,6 +22,11 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - script:
+        name: initialize git submodules
+        code: |
+          git submodule foreach git pull origin master
+
     # A step that executes `npm install` command
     - npm-install
     # A step that executes `npm test` command
@@ -34,7 +39,7 @@ build:
         code: |
           npm run pretest
 
-    - script: 
+    - script:
         name: Upload codecov results
         code: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
