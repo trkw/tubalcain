@@ -23,9 +23,17 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - add-ssh-key:
+        keyname: wercker-ssh-key
+        host: github.com
+
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: $FINGERPRINT
+
     - script:
-        name: Init submodules
-        code: git submodule update --init --force
+        name: initialize git submodules
+        code: git submodule update --init --recursive
 
     # A step that executes `npm install` command
     - npm-install
