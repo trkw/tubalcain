@@ -22,6 +22,17 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - install-packages:
+      packages: git
+    - script:
+      name: initialize git submodules
+      code: |
+        git submodule update --init --recursive
+    - script:
+      name: update git submodules
+      code: |
+        git submodule foreach git pull origin master
+
     # A step that executes `npm install` command
     - npm-install
     # A step that executes `npm test` command
