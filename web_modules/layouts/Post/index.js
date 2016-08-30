@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react"
-
 import Page from "../Page"
+import styles from "./index.css"
+import moment from "moment"
 
 class Post extends Component {
 
@@ -10,17 +11,17 @@ class Post extends Component {
     const { props } = this
     const { head } = props
 
-    const pageDate = head.date ? new Date(head.date) : null
+    const pageDate = moment(head.date ? new Date(head.date) : null)
 
     return (
       <Page
         { ...props }
         header={
-          <header>
+          <header className={ styles.postHeader }>
           {
             pageDate &&
-            <time key={ pageDate.toISOString() }>
-              { pageDate.toDateString() }
+            <time className={ styles.postDate } key={ pageDate.toISOString() }>
+              { pageDate.locale("ja").format("YYYY/MM/DD dddd") }
             </time>
           }
           </header>

@@ -47,9 +47,9 @@ export default class Layout extends Component {
         <style>{ "@-ms-viewport { width: device-width; }" }</style>
 
         <Header />
-        <div className={ styles.content }>
+        <main className={ styles.content }>
           { this.props.children }
-        </div>
+        </main>
         <Footer />
       </div>
     )

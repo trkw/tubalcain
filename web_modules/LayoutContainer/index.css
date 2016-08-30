@@ -1,9 +1,18 @@
+@custom-media --pc (min-width: 960px);
+@custom-media --sp (max-width: 959px);
+
+
 .layout {
   /* placeholder */
 }
 
 .content {
-  max-width: 60rem;
+  display: block;
+  width: 960px;
   margin: auto;
   padding: 1rem 0.75rem;
+  @media (--sp) {
+    width: auto;
+    padding: 20px;
+  }
 }
