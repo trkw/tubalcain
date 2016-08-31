@@ -18,12 +18,10 @@ test_script:
   # run tests
   - npm test
 
-
 init:
   - git config --global core.autocrlf false
 
 branches:
-# ビルドするブランチを制限する場合に記述します
   only:
     - master
   except:
