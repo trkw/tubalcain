@@ -1,4 +1,4 @@
-# [trkw](https://github.com/trkw/trkw) [![wercker status](https://app.wercker.com/status/67eb2b3bccd91b0ce2444da3d342ec26/s/master "wercker status")](https://app.wercker.com/project/byKey/67eb2b3bccd91b0ce2444da3d342ec26) ![david](https://david-dm.org/trkw/trkw.svg)
+# [trkw](http://trkw.me/) [![wercker status](https://app.wercker.com/status/67eb2b3bccd91b0ce2444da3d342ec26/s/master "wercker status")](https://app.wercker.com/project/byKey/67eb2b3bccd91b0ce2444da3d342ec26)  [![Code Climate](http://img.shields.io/codeclimate/github/trkw/trkw.svg)](https://codeclimate.com/github/trkw/trkw) [![Dependency Status](https://david-dm.org/trkw/trkw.svg)](https://david-dm.org/trkw/trkw)
 
 [trkw.me](https://trkw.me)のリポジトリです。
 
