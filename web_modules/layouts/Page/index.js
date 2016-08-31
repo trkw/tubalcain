@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 import invariant from "invariant"
 import { BodyContainer, joinUri } from "phenomic"
+import styles from "./index.css"
 
 class Page extends Component {
   render() {
@@ -45,7 +46,7 @@ class Page extends Component {
     ]
 
     return (
-      <div>
+      <div className={ styles.page }>
         <Helmet
           htmlAttributes={ htmlAttributes }
           title={ metaTitle }
@@ -54,12 +55,14 @@ class Page extends Component {
 
         {
           head.title &&
-          <h1>{ head.title }</h1>
+          <h1 className={ styles.page__title }>{ head.title }</h1>
         }
         { header }
-        <BodyContainer>{ body }</BodyContainer>
-        { props.children }
-        { footer }
+        <div className={ styles.page__body }>
+          <BodyContainer>{ body }</BodyContainer>
+          { props.children }
+          { footer }
+        </div>
       </div>
     )
   }
