@@ -17,10 +17,13 @@ class Post extends Component {
       <Page
         { ...props }
         header={
-          <header className={ styles.postHeader }>
+          <header className={ styles.post__header }>
           {
             pageDate &&
-            <time className={ styles.postDate } key={ pageDate.toISOString() }>
+            <time
+              className={ styles.post__date }
+              key={ pageDate.toISOString() }
+            >
               { pageDate.locale("ja").format("YYYY/MM/DD dddd") }
             </time>
           }
