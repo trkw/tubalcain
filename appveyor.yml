@@ -1,6 +1,8 @@
 # appveyor file
 # http://www.appveyor.com/docs/appveyor-yml
-
+environment:
+  nodejs_version: 5.10.0
+    
 install:
   # Update Node.js
   - node --version
@@ -14,10 +16,6 @@ install:
 
 test_script:
   - npm test
-
-environment:
-  matrix:
-    - nodejs_version: 5.10.0
 
 init:
   - git config --global core.autocrlf false
