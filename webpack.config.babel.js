@@ -150,6 +150,8 @@ export const makeConfig = (config = {}) => {
       require("stylelint")(),
       require("postcss-cssnext")({ browsers: "last 2 versions" }),
       require("postcss-reporter")(),
+      require("postcss-custom-media")(),
+      require("postcss-nested")(),
       ...config.production ? [
         require("postcss-browser-reporter")(),
       ] : [],
