@@ -1,0 +1,33 @@
+# appveyor file
+# http://www.appveyor.com/docs/appveyor-yml
+
+install:
+  # Update Node.js
+  - node --version
+
+  # Update NPM
+  - npm install -g npm
+  - npm --version
+
+  # Install dependencies & devDependencies
+  - npm install
+
+test_script:
+  - npm test
+
+environment:
+  matrix:
+    - nodejs_version: 5.10.0
+
+init:
+  - git config --global core.autocrlf false
+
+branches:
+# ビルドするブランチを制限する場合に記述します
+  only:
+    - master
+  except:
+    - gh-pages
+
+build: off
+deploy: off
