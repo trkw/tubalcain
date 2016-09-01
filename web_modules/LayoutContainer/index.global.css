@@ -35,8 +35,8 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
 
-  /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* https://www.mirucon.com/2016/01/01/2016-font-family/ */
+  font-family: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
 }
 
 /*
