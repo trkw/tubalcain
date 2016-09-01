@@ -33,6 +33,13 @@ export default class Footer extends Component {
         >
           { "Loading" }
         </Link>
+        { ", " }
+        <Link
+          className={ styles.link }
+          to="/markdown-cheatsheet/"
+        >
+          { "markdown-cheatsheet" }
+        </Link>
       </footer>
     )
   }
