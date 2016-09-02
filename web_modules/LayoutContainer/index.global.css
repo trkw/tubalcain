@@ -27,7 +27,6 @@ body {
  */
 html {
   min-height: 100%;
-  background: color(#deecf1 a(0.4));
   background: #fff;
 }
 
@@ -73,7 +72,59 @@ body {
   }
 }
 
-/* minimal styling, prefer removing this and use local styles */
-a {
-  color: #0e63e3;
+.phenomic-BodyContainer {
+  border: 1px solid #eee;
+  p {
+    padding: 0;
+  }
+  & > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  & > :not(iframe) {
+    display: block;
+    width: 960px;
+
+    @media (max-width: 959px) {
+      width: auto;
+      padding: 0;
+    }
+  }
+
+  & > iframe {
+    display: block;
+    max-width: 100%;
+  }
+  & > .hasImg {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  pre {
+    background: color(#999 a(0.1));
+    overflow-x: scroll;
+
+    code {
+      display: block;
+      background: #222;
+      color: #3c9;
+      padding: 12px;
+    }
+  }
+  blockquote {
+    border-left: 8px solid color(#09f a(0.2));
+    margin: 0;
+    padding: 4px 20px;
+    background: color(#999 a(0.1));
+  }
+  code {
+    color: #630;
+  }
 }
