@@ -7,6 +7,9 @@
     margin: 80px auto;
   }
   &__body {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     h1 {
       font-size: 2.5rem;
       line-height: 4rem;
@@ -26,17 +29,5 @@
       font-weight: normal;
       margin: 40px 0 0;
     }
-  }
-  blockquote {
-    border-left: 8px solid color(#09f a(0.2));
-    margin: 0;
-    padding: 4px 20px;
-    background: color(#999 a(0.1));
-  }
-  code {
-    color: #630;
-  }
-  li:has(> input) {
-    color: #f00;
   }
 }
