@@ -79,28 +79,32 @@ body {
   }
   & > * {
     margin-left: auto !important;
-    margin-right: auto !important;    
+    margin-right: auto !important;
   }
+
   & > :not(iframe) {
     display: block;
     width: 960px;
-    @media (max-width:959px) {
+
+    @media (max-width: 959px) {
       width: auto;
       padding: 0;
-    } 
+    }
   }
+
   & > iframe {
     display: block;
     max-width: 100%;
   }
-  & > .hasImg{
+  & > .hasImg {
     display: block;
     max-width: 100%;
     width: auto;
     text-align: center;
   }
+
   img {
-    max-width: 100%;    
+    max-width: 100%;
     height: auto;
   }
   pre {
