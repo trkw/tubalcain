@@ -4,12 +4,4 @@
 .content {
   display: block;
   margin: auto;
-/*
-  padding: 1rem 0.75rem;
-
-  @media (--sp) {
-    width: auto;
-    padding: 20px;
-  }
-*/
 }
