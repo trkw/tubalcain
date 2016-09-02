@@ -4,7 +4,27 @@ import invariant from "invariant"
 import { BodyContainer, joinUri } from "phenomic"
 import styles from "./index.css"
 
+const setImgsRoot = () => {
+  const bc = document.getElementsByClassName("phenomic-BodyContainer")[0]
+  const imgs = bc.getElementsByTagName("img")
+
+  for (let i = 0; i < imgs.length; i++) {
+    let el = imgs[i]
+    while (el.parentElement !== bc) {
+      el = el.parentElement
+    }
+    el.setAttribute("class", "hasImg")
+  }
+
+}
 class Page extends Component {
+
+  componentDidMount() {
+    setImgsRoot()
+  }
+  componentDidUpdate() {
+    setImgsRoot()
+  }
   render() {
     const { props, context } = this
 
