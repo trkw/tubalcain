@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/phenomic --devPort $PORT --production start
+web: npm install -g phenomic && phenomic --devPort $PORT --production start
