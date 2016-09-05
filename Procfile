@@ -1,1 +1,1 @@
-web: /app/.heroku/node/lib/node_modules/phenomic --devPort 3000 --production start
+web: ./node_modules/.bin/phenomic --devPort $PORT --production start
