@@ -1,5 +1,5 @@
-var express = require('express')
-var app = express()
+import express from 'express';
+let app = express();
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/dist'))
