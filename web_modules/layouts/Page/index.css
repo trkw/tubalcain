@@ -1,7 +1,5 @@
 .page {
   &__title {
-    font-size: 4rem;
-    line-height: 6rem;
     display: block;
     text-align: center;
     margin: 80px auto;
@@ -11,22 +9,13 @@
     margin-left: auto;
     margin-right: auto;
     h1 {
-      font-size: 2.5rem;
-      line-height: 4rem;
-      font-weight: normal;
       margin: 60px 0 40px;
       border-bottom: 1px solid #999;
     }
     h2 {
-      font-size: 2rem;
-      line-height: 3rem;
-      font-weight: normal;
       margin: 40px 0 0;
     }
     h3 {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      font-weight: normal;
       margin: 40px 0 0;
     }
     table {
