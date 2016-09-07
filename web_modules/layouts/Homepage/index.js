@@ -3,7 +3,6 @@ import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import Page from "../Page"
 import PagesList from "../../PagesList"
-import Cover from "../../Cover"
 
 const numberOfLatestPosts = 6
 
@@ -22,7 +21,6 @@ export default class Homepage extends Component {
 
     return (
       <Page { ...this.props }>
-        <Cover />
         <h2>{ "Latest Posts" }</h2>
         <PagesList pages={ latestPosts } />
       </Page>
