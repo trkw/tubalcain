@@ -27,6 +27,11 @@ class Post extends Component {
               { pageDate.locale("ja").format("YYYY/MM/DD dddd") }
             </time>
           }
+          {
+            <div>
+              { head.authors.join() }
+            </div>
+          }
           </header>
         }
       />
