@@ -13,6 +13,8 @@ class Post extends Component {
 
     const pageDate = moment(head.date ? new Date(head.date) : null)
 
+    let authors = head.authors ? head.authors.join(",") : undefined
+
     return (
       <Page
         { ...props }
@@ -29,7 +31,7 @@ class Post extends Component {
           }
           {
             <div>
-              { head.authors.join() }
+              { authors }
             </div>
           }
           </header>
