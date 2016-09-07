@@ -72,12 +72,18 @@ body {
   }
 }
 
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0.2em 0;
+}
+
 .phenomic-BodyContainer {
   border: 1px solid #eee;
-  p {
-    padding: 0;
-  }
   & > * {
+    margin: 1em auto;
     margin-left: auto !important;
     margin-right: auto !important;
   }
