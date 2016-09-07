@@ -12,6 +12,7 @@ class Post extends Component {
     const { head } = props
 
     const pageDate = moment(head.date ? new Date(head.date) : null)
+    const image = head.image ? "/assets/thumbnail/" + head.image : "default.jpg"
 
     let authors = head.authors ? head.authors.join(",") : undefined
 
@@ -33,6 +34,9 @@ class Post extends Component {
             <div>
               { authors }
             </div>
+          }
+          {
+            <img src={ image } width="100%" />
           }
           </header>
         }
