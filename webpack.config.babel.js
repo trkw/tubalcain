@@ -84,7 +84,7 @@ export const makeConfig = (config = {}) => {
         },
         // material desgin lite
         {
-          test: /\.css$/,
+          test: /\.min\.css$/,
           include: path.resolve(__dirname, "node_modules/material-design-lite"),
           loader: ExtractTextPlugin.extract(
             "style-loader",
