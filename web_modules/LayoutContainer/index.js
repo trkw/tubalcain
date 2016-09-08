@@ -1,12 +1,15 @@
 import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 
+if (typeof window !== "undefined") {
+  require("material-design-lite/material.min.css")
+}
+import "./index.global.css"
+import styles from "./index.css"
+
 import Header from "../Header"
 import Footer from "../Footer"
 import GATracker from "../GATracker/GATracker"
-
-import "./index.global.css"
-import styles from "./index.css"
 
 export default class Layout extends Component {
 
@@ -25,7 +28,7 @@ export default class Layout extends Component {
     } = this.context.metadata
 
     return (
-      <div className={ styles.layout }>
+      <div className={ "mdl-layout" } >
         <GATracker params={ this.props.params }>
           <Helmet
             meta={ [
