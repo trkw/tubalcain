@@ -21,8 +21,10 @@ export default class Homepage extends Component {
 
     return (
       <Page { ...this.props }>
-        <h2>{ "Latest Posts" }</h2>
-        <PagesList pages={ latestPosts } />
+        <div className="container">
+          <h2>{ "Latest Posts" }</h2>
+          <PagesList pages={ latestPosts } />
+        </div>
       </Page>
     )
   }

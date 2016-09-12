@@ -1,7 +1,19 @@
-.post {
-  &__date {
-    display: block;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-  }
+.header {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.date {
+  display: block;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.authors {
+  text-align: center;
+}
+
+.cover {
+  width: 100%;
+  margin: 0 auto;
 }
