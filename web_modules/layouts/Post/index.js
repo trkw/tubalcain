@@ -20,23 +20,28 @@ class Post extends Component {
       <Page
         { ...props }
         header={
-          <header className={ styles.post__header }>
+          <header className={ styles.header }>
           {
             pageDate &&
             <time
-              className={ styles.post__date }
+              className={ styles.date }
               key={ pageDate.toISOString() }
             >
               { pageDate.locale("ja").format("YYYY/MM/DD dddd") }
             </time>
           }
           {
-            <div>
+            <div
+              className={ styles.authors }
+            >
               { authors }
             </div>
           }
           {
-            <img src={ image } width="100%" />
+            <img
+              src={ image }
+              className={ styles.cover }
+            />
           }
           </header>
         }

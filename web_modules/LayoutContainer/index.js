@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 
 if (typeof window !== "undefined") {
-  require("material-design-lite/material.min.css")
+//  require("material-design-lite/material.min.css")
 }
 import "./index.global.css"
 import styles from "./index.css"
