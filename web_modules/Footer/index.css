@@ -1,8 +1,9 @@
 .footer {
-  margin-top: 1rem;
-  padding: 1rem;
+  margin: 80px auto 0;
+  padding: 120px 0 80px;
   font-size: 0.75rem;
   text-align: center;
+  background: #eee;
 }
 
 .link {
