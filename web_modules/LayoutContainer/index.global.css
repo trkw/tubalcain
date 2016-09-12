@@ -1,39 +1,68 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   /* https://www.mirucon.com/2016/01/01/2016-font-family/ */
   font-family: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+  margin: 0;
 }
 
-.phenomic-BodyContainer {
-  border: 1px solid #eee;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+a {
+  color: #ff4081;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.phenomic-BodyContainer,
+.container {
+  margin-top: 60px;
+  padding: 0 20px;
+
+  * {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
   & > * {
-    margin: 1em auto;
+    margin: 1em auto 0;
     margin-left: auto !important;
     margin-right: auto !important;
   }
-
   & > :not(iframe) {
     display: block;
     width: 960px;
 
     @media (max-width: 959px) {
       width: auto;
-      padding: 0;
     }
   }
-
-  & > iframe {
+  & > iframe,
+  & > .hasImg {
     display: block;
     max-width: 100%;
   }
   & > .hasImg {
-    display: block;
-    max-width: 100%;
     width: auto;
     text-align: center;
   }
-
   img {
     max-width: 100%;
     height: auto;
@@ -50,12 +79,56 @@ body {
     }
   }
   blockquote {
-    border-left: 8px solid color(#09f a(0.2));
-    margin: 0;
+    border-left: 8px solid color(#ccc a(0.2));
     padding: 4px 20px;
-    background: color(#999 a(0.1));
+    color: #666;
+    background: color(#ccc a(0.1));
   }
   code {
     color: #630;
   }
+
+  h1 {
+    font-size: 32px;
+    border-bottom: 2px solid #ddd;
+    padding: 0 0 10px;
+    margin: 60px 0 40px;
+  }
+  h2 {
+    font-size: 28px;
+
+    &::before {
+      content: "";
+      border-left: 3px solid #ddd;
+      margin-right: 16px;
+    }
+  }
+  h3 {
+    font-size: 28px;
+  }
+
+  li {
+    p {
+      margin: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    border: 1px solid #999;
+    padding: 8px;
+  }
+  th {
+    background: #eee;
+  }
+  thead {
+    td,
+    th {
+      background: #eee;
+    }
+  }
+
 }
