@@ -48,7 +48,10 @@ class Page extends Component {
 
     const htmlAttributes = { lang: "ja" }
 
-    const metaTitle = head.metaTitle ? head.metaTitle : head.title
+    const metaTitle = [
+      head.metaTitle ? head.metaTitle : head.title,
+      pkg.name,
+    ].join(" | ")
 
     const meta = [
       { property: "og:type", content: "article" },
