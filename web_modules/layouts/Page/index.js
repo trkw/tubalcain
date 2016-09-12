@@ -63,6 +63,10 @@ class Page extends Component {
       { name: "twitter:creator", content: `@${ pkg.twitter }` },
       { name: "twitter:description", content: head.description },
       { name: "description", content: head.description },
+      {
+        name: "google-site-verification",
+        content: "VzdhRC0A5qKJzVL9MFmeLbTY3DF08o43EZpDa5b-CVM",
+      },
     ]
 
     return (
