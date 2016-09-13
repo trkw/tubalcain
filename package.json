@@ -43,9 +43,6 @@
     "extends": [
       "eslint-config-i-am-meticulous/react"
     ],
-    "globals": {
-      "FB": false
-    },
     "parser": "babel-eslint",
     "rules": {
       "react/prefer-stateless-function": 0

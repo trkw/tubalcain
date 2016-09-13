@@ -9,7 +9,6 @@ import {
   LinkedinButton,
   PocketButton,
   GooglePlusButton,
-  FeedlyButton,
 } from "react-social-sharebuttons"
 
 class Post extends Component {
@@ -39,8 +38,7 @@ class Post extends Component {
     let layout = "button_count"
     let hatenaLayout = "standard-balloon"
     let linkdinCounter = "right"
-    let feedlyUrl = "https://trkw.me"
-    let feedlyLayout = "rectangle-volume-small-small"
+
     return (
       <Page
         { ...props }
@@ -90,12 +88,6 @@ class Post extends Component {
                 <LinkedinButton url={ url } counter={ linkdinCounter } />
               </ol>
               <ol><GooglePlusButton /></ol>
-              <ol>
-                <FeedlyButton
-                  feedurl={ feedlyUrl }
-                  layout={ feedlyLayout }
-                />
-              </ol>
             </ul>
           }
           </header>
