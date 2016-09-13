@@ -5,9 +5,10 @@ import styles from "./index.css"
 import Svg from "react-svg-inline"
 import twitterSvg from "../icons/iconmonstr-twitter-1.svg"
 import gitHubSvg from "../icons/iconmonstr-github-1.svg"
+import trkwSvg from "../icons/trkw.svg"
 
 export default class Header extends Component {
-  
+
   static contextTypes = {
     metadata: PropTypes.object.isRequired,
   };
@@ -25,7 +26,10 @@ export default class Header extends Component {
               className={ styles.link }
               to="/"
             >
-              { "Home" }
+              <Svg
+                svg={ trkwSvg }
+                className={ styles.logo }
+              />
             </Link>
           </div>
           <div className={ styles.navPart2 }>
