@@ -1,7 +1,13 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
 
+:root {
+  --main-font-size: 18px;
+  --list-font-size: 16px;
+}
+
 * {
   box-sizing: border-box;
+  word-break: break-word;
 }
 
 body {
@@ -31,13 +37,18 @@ a {
   }
 }
 
+ul,
+ol {
+  padding-left: 28px;
+}
+
 .phenomic-BodyContainer,
 .container {
   margin-top: 60px;
   padding: 0 20px;
 
   * {
-    font-size: 20px;
+    font-size: var(--main-font-size);
     line-height: 1.5;
   }
 
@@ -79,10 +90,10 @@ a {
     }
   }
   blockquote {
-    border-left: 8px solid color(#ccc a(0.2));
+    border-left: 8px solid color(#aaa a(0.2));
     padding: 4px 20px;
     color: #666;
-    background: color(#ccc a(0.1));
+    background: color(#aaa a(0.1));
   }
   code {
     color: #630;
@@ -108,7 +119,10 @@ a {
   }
 
   li {
+    font-size: var(--list-font-size);
+    margin: 0.2em auto 0;
     p {
+      font-size: var(--list-font-size);
       margin: 0;
     }
   }
