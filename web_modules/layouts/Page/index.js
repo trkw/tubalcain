@@ -73,7 +73,7 @@ class Page extends Component {
     ]
 
     return (
-      <div className={ styles.page }>
+      <article className={ styles.page }>
         <Helmet
           htmlAttributes={ htmlAttributes }
           title={ metaTitle }
@@ -85,12 +85,12 @@ class Page extends Component {
           <h1 className={ styles.page__title }>{ head.title }</h1>
         }
         { header }
-        <div className={ styles.page__body }>
+        <section className={ styles.page__body }>
           <BodyContainer>{ body }</BodyContainer>
           { props.children }
           { footer }
-        </div>
-      </div>
+        </section>
+      </article>
     )
   }
 }
