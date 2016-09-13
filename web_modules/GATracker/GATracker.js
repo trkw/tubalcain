@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react"
 import ga from "react-ga"
 
 const isBrowser = (typeof window !== "undefined")
+const isProduction = process.env.NODE_ENV === "production"
 
 export default class GATracker extends Component {
   static propTypes = {
@@ -20,8 +21,11 @@ export default class GATracker extends Component {
       },
     } = this.context.metadata
 
-    if (isBrowser) {
+    if (isProduction && isBrowser) {
       ga.initialize(googleAnalyticsUA)
+    }
+    if (!isProduction && isBrowser) {
+      console.info("ga.initialize", googleAnalyticsUA)
     }
     this.logPageview()
   }
@@ -33,8 +37,11 @@ export default class GATracker extends Component {
   }
 
   logPageview() {
-    if (isBrowser) {
+    if (isProduction && isBrowser) {
       ga.pageview(window.location.href)
+    }
+    if (!isProduction && isBrowser) {
+      console.info("New pageview", window.location.href)
     }
   }
 
