@@ -43,6 +43,9 @@
     "extends": [
       "eslint-config-i-am-meticulous/react"
     ],
+    "globals": {
+      "FB": false
+    },
     "parser": "babel-eslint",
     "rules": {
       "react/prefer-stateless-function": 0
@@ -98,5 +101,9 @@
     "stylelint-config-standard": "^10.0.0",
     "webpack": "^1.12.1",
     "whatwg-fetch": "^0.11.0"
+  },
+  "devDependencies": {
+    "react-social": "^1.4.3",
+    "react-social-sharebuttons": "^2.0.0"
   }
 }
