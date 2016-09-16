@@ -6,9 +6,7 @@ import {
   FacebookButton,
   TwitterTweetButton,
   HatenabookmarkButton,
-  LinkedinButton,
   PocketButton,
-  GooglePlusButton,
 } from "react-social-sharebuttons"
 
 class Post extends Component {
@@ -37,7 +35,6 @@ class Post extends Component {
     let appId = "972356726110615"
     let layout = "button_count"
     let hatenaLayout = "standard-balloon"
-    let linkdinCounter = "right"
 
     return (
       <Page
@@ -66,31 +63,31 @@ class Post extends Component {
               className={ styles.cover }
             />
           }
+          </header>
+        } 
+        footer={
+          <footer>
           {
-            <ul>
-              <ol>
+            <ul className={ styles.sns }>
+              <li>
                 <FacebookButton
                   url={ url }
                   layout={ layout }
                   appId={ appId }
                 />
-              </ol>
-              <ol>
+              </li>
+              <li>
                 <TwitterTweetButton
                   text={ head.title }
                 />
-              </ol>
-              <ol><PocketButton /></ol>
-              <ol>
+              </li>
+              <li><PocketButton /></li>
+              <li>
                 <HatenabookmarkButton url={ url } layout={ hatenaLayout } />
-              </ol>
-              <ol>
-                <LinkedinButton url={ url } counter={ linkdinCounter } />
-              </ol>
-              <ol><GooglePlusButton /></ol>
+              </li>
             </ul>
           }
-          </header>
+          </footer>
         }
       />
     )

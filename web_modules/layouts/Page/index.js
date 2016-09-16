@@ -88,8 +88,8 @@ class Page extends Component {
         <section className={ styles.page__body }>
           <BodyContainer>{ body }</BodyContainer>
           { props.children }
-          { footer }
         </section>
+        { footer }
       </article>
     )
   }
