@@ -22,7 +22,7 @@ class Post extends Component {
     const { head } = props
 
     const pageDate = moment(head.date ? new Date(head.date) : null)
-    const image = head.image ? "/assets/thumbnail/" + head.image : "default.jpg"
+    const coverDir = "/assets/thumbnail/"
 
     let authors = head.authors ? head.authors.join(",") : undefined
 
@@ -58,8 +58,9 @@ class Post extends Component {
             </div>
           }
           {
+            head.image &&
             <img
-              src={ image }
+              src={ coverDir + head.image }
               className={ styles.cover }
             />
           }
