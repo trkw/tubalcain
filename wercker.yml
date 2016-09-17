@@ -65,4 +65,4 @@ deploy:
       branch: master
 
     - 1syo/gitter-notify@0.0.1:
-        token: WERCKER_GITTER_NOTIFY_TOKEN
+        token: $WERCKER_GITTER_NOTIFY_TOKEN
