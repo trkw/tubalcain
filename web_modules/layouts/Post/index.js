@@ -6,9 +6,7 @@ import {
   FacebookButton,
   TwitterTweetButton,
   HatenabookmarkButton,
-  LinkedinButton,
   PocketButton,
-  GooglePlusButton,
 } from "react-social-sharebuttons"
 
 class Post extends Component {
@@ -24,7 +22,7 @@ class Post extends Component {
     const { head } = props
 
     const pageDate = moment(head.date ? new Date(head.date) : null)
-    const image = head.image ? "/assets/thumbnail/" + head.image : "default.jpg"
+    const coverDir = "/assets/thumbnail/"
 
     const authors = head.authors ? head.authors.join(",") : undefined
 
@@ -37,7 +35,6 @@ class Post extends Component {
     const appId = "972356726110615"
     const layout = "button_count"
     const hatenaLayout = "standard-balloon"
-    const linkdinCounter = "right"
 
     return (
       <Page
@@ -61,36 +58,37 @@ class Post extends Component {
             </div>
           }
           {
+            head.image &&
             <img
-              src={ image }
+              src={ coverDir + head.image }
               className={ styles.cover }
             />
           }
+          </header>
+        }
+        footer={
+          <footer>
           {
-            <ul>
-              <ol>
+            <ul className={ styles.sns }>
+              <li>
                 <FacebookButton
                   url={ url }
                   layout={ layout }
                   appId={ appId }
                 />
-              </ol>
-              <ol>
+              </li>
+              <li>
                 <TwitterTweetButton
                   text={ head.title }
                 />
-              </ol>
-              <ol><PocketButton /></ol>
-              <ol>
+              </li>
+              <li><PocketButton /></li>
+              <li>
                 <HatenabookmarkButton url={ url } layout={ hatenaLayout } />
-              </ol>
-              <ol>
-                <LinkedinButton url={ url } counter={ linkdinCounter } />
-              </ol>
-              <ol><GooglePlusButton /></ol>
+              </li>
             </ul>
           }
-          </header>
+          </footer>
         }
       />
     )
