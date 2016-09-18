@@ -17,16 +17,3 @@
   width: 100%;
   margin: 0 auto;
 }
-
-.sns {
-  display: block;
-  text-align: center;
-  margin-top: 80px;
-  padding: 0 20px;
-  & > li {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 100%;
-    margin: 5px 5px 0;
-  }
-}
