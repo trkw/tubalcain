@@ -26,7 +26,7 @@ class Post extends Component {
     const pageDate = moment(head.date ? new Date(head.date) : null)
     const image = head.image ? "/assets/thumbnail/" + head.image : "default.jpg"
 
-    let authors = head.authors ? head.authors.join(",") : undefined
+    const authors = head.authors ? head.authors.join(",") : undefined
 
     let url = ""
 
@@ -34,10 +34,10 @@ class Post extends Component {
       url = window.location.href
     }
 
-    let appId = "972356726110615"
-    let layout = "button_count"
-    let hatenaLayout = "standard-balloon"
-    let linkdinCounter = "right"
+    const appId = "972356726110615"
+    const layout = "button_count"
+    const hatenaLayout = "standard-balloon"
+    const linkdinCounter = "right"
 
     return (
       <Page
