@@ -24,6 +24,6 @@ export default class Cover extends React.Component {
   }
 
   render() {
-    return <div></div>
+    return <div />
   }
 }
