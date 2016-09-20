@@ -1,102 +1,44 @@
 import React, { Component, PropTypes } from "react"
-import Page from "../Page"
-import styles from "./index.css"
-import moment from "moment"
-import {
-  FacebookButton,
-  TwitterTweetButton,
-  HatenabookmarkButton,
-  PocketButton,
-} from "react-social-sharebuttons"
+import Post from "./Post"
+import enhanceCollection from "phenomic/lib/enhance-collection"
 
-class Post extends Component {
+export default class PostAddNavigation extends Component {
+  static propTypes = {
+    __filename: PropTypes.string.isRequired,
+  };
 
-  // it's up to you to choose what to do with this layout ;)
+  static contextTypes = {
+    collection: PropTypes.array.isRequired,
+  };
 
-  isBrowser() {
-    return !(typeof document === "undefined" || typeof window === "undefined")
+  get postNavigation() {
+    const collection = enhanceCollection(this.context.collection, {
+      filter: (post) => {
+        if (process.env.NODE_ENV !== "production") {
+          return (post.layout === "Post")
+        }
+        else {
+          return (post.layout === "Post" && post.draft === undefined)
+        }
+      },
+      sort: "date",
+      addSiblingReferences: true,
+    })
+    const currentPost = collection
+      .find((item) => item.__filename === this.props.__filename)
+
+    return {
+      next: currentPost.next,
+      previous: currentPost.previous,
+    }
   }
 
   render() {
-    const { props } = this
-    const { head } = props
-
-    const pageDate = moment(head.date ? new Date(head.date) : null)
-    const coverDir = "/assets/thumbnail/"
-
-    const authors = head.authors ? head.authors.join(",") : undefined
-
-    let url = ""
-
-    if (this.isBrowser()) {
-      url = window.location.href
-    }
-
-    const appId = "972356726110615"
-    const layout = "button_count"
-    const hatenaLayout = "standard-balloon"
-
     return (
-      <Page
-        { ...props }
-        header={
-          <header className={ styles.header }>
-          {
-            pageDate &&
-            <time
-              className={ styles.date }
-              key={ pageDate.toISOString() }
-            >
-              { pageDate.locale("ja").format("YYYY/MM/DD dddd") }
-            </time>
-          }
-          {
-            <div
-              className={ styles.authors }
-            >
-              { authors }
-            </div>
-          }
-          {
-            head.image &&
-            <img
-              src={ coverDir + head.image }
-              className={ styles.cover }
-            />
-          }
-          </header>
-        }
-        footer={
-          <footer>
-          {
-            <ul className={ styles.sns }>
-              <li>
-                <FacebookButton
-                  url={ url }
-                  layout={ layout }
-                  appId={ appId }
-                />
-              </li>
-              <li>
-                <TwitterTweetButton
-                  text={ head.title }
-                />
-              </li>
-              <li><PocketButton /></li>
-              <li>
-                <HatenabookmarkButton url={ url } layout={ hatenaLayout } />
-              </li>
-            </ul>
-          }
-          </footer>
-        }
+      <Post
+        navigation={ this.postNavigation }
+        { ...this.props }
       />
     )
   }
 }
-
-Post.propTypes = {
-  head: PropTypes.object.isRequired,
-}
-
-export default Post
