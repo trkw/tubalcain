@@ -51,6 +51,7 @@ export const makeConfig = (config = {}) => {
           include: [
             path.resolve(__dirname, "scripts"),
             path.resolve(__dirname, "web_modules"),
+            path.resolve(__dirname, "node_modules", "react-icons"),
           ],
         },
 
