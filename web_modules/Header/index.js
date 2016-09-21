@@ -33,22 +33,20 @@ export default class Header extends Component {
             </Link>
           </div>
           <div className={ styles.navPart2 }>
-            { pkg.twitter &&
-              <a
-                href={ `https://twitter.com/${pkg.twitter}` }
-                className={ styles.link }
-              >
-                <Svg svg={ twitterSvg } />
-                  { "Twitter" }
-              </a>
-            }
             { pkg.repository &&
               <a
                 href={ pkg.repository }
                 className={ styles.link }
               >
                 <Svg svg={ gitHubSvg } />
-                { "GitHub" }
+              </a>
+            }
+            { pkg.twitter &&
+              <a
+                href={ `https://twitter.com/${pkg.twitter}` }
+                className={ styles.link }
+              >
+                <Svg svg={ twitterSvg } />
               </a>
             }
           </div>
