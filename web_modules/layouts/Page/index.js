@@ -48,7 +48,9 @@ class Page extends Component {
 
     const htmlAttributes = { lang: "ja" }
 
-    const metaTitle = [
+    const metaTitle = head.layout === "Homepage"
+    ? pkg.name
+    : [
       head.metaTitle ? head.metaTitle : head.title,
       pkg.name,
     ].join(" | ")
