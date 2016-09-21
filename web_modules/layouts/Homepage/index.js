@@ -4,7 +4,7 @@ import enhanceCollection from "phenomic/lib/enhance-collection"
 import Page from "../Page"
 import PagesList from "../../PagesList"
 
-const numberOfLatestPosts = 6
+const numberOfLatestPosts = 10
 
 export default class Homepage extends Component {
   static contextTypes = {
