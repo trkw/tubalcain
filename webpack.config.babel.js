@@ -84,15 +84,6 @@ export const makeConfig = (config = {}) => {
             [ "css-loader", "postcss-loader" ].join("!"),
           ),
         },
-        // material desgin lite
-        {
-          test: /\.min\.css$/,
-          include: path.resolve(__dirname, "node_modules/material-design-lite"),
-          loader: ExtractTextPlugin.extract(
-            "style-loader",
-            [ "css-loader" ].join("!"),
-          ),
-        },
         // ! \\
         // If you want global CSS only, just remove the 2 sections above
         // and use the following one
