@@ -1,0 +1,19 @@
+{
+  "name": "trkw",
+  "description": "trkw",
+  "keywords": [
+    "phenomic",
+    "react",
+    "webpack"
+  ],
+  "addons": [],
+  "env": {},
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/dmathieu/heroku-buildpack-submodules"
+    }
+  ]
+}
