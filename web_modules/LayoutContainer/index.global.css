@@ -7,7 +7,7 @@
   /* http://oshin.tokyo/2016/02/12/font-family-2016/ */
   --font-family-serif: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
 
-  --main-font-size: 18px;
+  --main-font-size: 16px;
   --list-font-size: 16px;
   --width-sp: 720px;
 }
@@ -20,6 +20,8 @@
 body {
   font-family: var(--font-family-sans-serif);
   margin: 0;
+  font-size: var(--main-font-size);
+  line-height: 1.7;
 }
 
 h1,
@@ -30,6 +32,11 @@ h5,
 h6 {
   font-weight: 400;
   font-family: var(--font-family-serif);
+  position: relative;
+
+  &:hover .phenomic-HeadingAnchor {
+    opacity: 1;
+  }
 }
 
 h1 {
@@ -49,15 +56,20 @@ ol {
   padding-left: 28px;
 }
 
+.phenomic-HeadingAnchor {
+  position: absolute;
+  left: -1em;
+  width: 1em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-decoration: none;
+}
+
 .phenomic-BodyContainer,
 .container {
   margin-top: 60px;
   padding: 0 20px;
-
-  * {
-    font-size: var(--main-font-size);
-    line-height: 1.5;
-  }
 
   & > * {
     margin: 1em auto 0;
@@ -81,6 +93,7 @@ ol {
     width: auto;
     text-align: center;
   }
+
   img {
     max-width: 100%;
     height: auto;
@@ -106,20 +119,27 @@ ol {
     color: #630;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 2em auto 0;
+  }
+
   h1 {
     font-size: 32px;
     border-bottom: 2px solid #ddd;
-    padding: 0 0 10px;
-    margin: 60px 0 40px;
+    padding: 0;
+    margin: 160px 0 60px;
+    text-align: center;
+    width: auto !important;
   }
   h2 {
     font-size: 28px;
-
-    &::before {
-      content: "";
-      border-left: 3px solid #ddd;
-      margin-right: 16px;
-    }
+    font-weight: 700;
+    text-align: center;
   }
   h3 {
     font-size: 28px;
