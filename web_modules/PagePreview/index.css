@@ -1,0 +1,123 @@
+:root {
+  /* https://www.mirucon.com/2016/01/01/2016-font-family/ */
+  --font-family-sans-serif: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+
+  /* http://oshin.tokyo/2016/02/12/font-family-2016/ */
+  --font-family-serif: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
+
+  --main-font-size: 18px;
+  --list-font-size: 16px;
+  --width-sp: 720px;
+}
+
+.card {
+  width: 100%;
+  margin: auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 200px;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 20px;
+}
+
+.title {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: block;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  line-height: normal;
+  padding: 16px;
+  -webkit-perspective-origin: 165px 56px;
+  perspective-origin: 165px 56px;
+  -webkit-transform-origin: 165px 56px;
+  transform-origin: 165px 56px;
+  box-sizing: border-box;
+  height: 200px;
+  color: #fff;
+  font-family: var(--font-family-serif);
+  font-size: 2rem;
+  background: #555;
+  opacity: 1;
+}
+
+.supportingtext {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1rem;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 16px;
+  width: 90%;
+}
+
+.actions {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  line-height: normal;
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.button {
+  background: transparent;
+  border: none;
+  border-radius: 2px;
+  position: relative;
+  height: 36px;
+  margin: 0;
+  min-width: 64px;
+  padding: 0 16px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+
+  &:hover {
+    background-color: hsla(0, 0%, 62%, 0.2);
+  }
+}
+
+.headData {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #999;
+  time {
+    font-size: 0.9rem;
+  }
+}
+
+.headAuthor {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}

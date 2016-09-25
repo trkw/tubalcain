@@ -8,13 +8,13 @@ const PagesList = ({ pages }) => {
     {
       pages.length
       ? (
-        <ul>
+        <div>
         {
           pages.map((page) => (
-            <li key={ page.title }><PagePreview { ...page } /></li>
+            <div key={ page.title }><PagePreview { ...page } /></div>
           ))
         }
-        </ul>
+        </div>
       )
       : "No posts yet."
     }
