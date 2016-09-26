@@ -9,6 +9,7 @@ import PageError from "../layouts/PageError"
 import PageLoading from "../layouts/PageLoading"
 import Homepage from "../layouts/Homepage"
 import Post from "../layouts/Post"
+import Archive from "../layouts/Archive"
 
 class PageContainer extends Component {
   render() {
@@ -22,6 +23,7 @@ class PageContainer extends Component {
           PageLoading,
           Homepage,
           Post,
+          Archive,
         } }
       />
     )
