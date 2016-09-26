@@ -22,11 +22,8 @@ class Post extends Component {
   render() {
     const { props } = this
     const { head, navigation } = props
-    console.log(navigation)
-
     const pageDate = moment(head.date ? new Date(head.date) : null)
     const coverDir = "/assets/thumbnail/"
-
     const authors = head.authors ? head.authors.join(",") : undefined
 
     let url = ""
