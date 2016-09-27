@@ -76,7 +76,7 @@
     "moment": "^2.14.1",
     "npm-run-all": "^3.1.0",
     "p5": "^0.5.3",
-    "phenomic": "^0.16.2",
+    "phenomic": "^0.17.0",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^2.4.0",
     "postcss-custom-media": "^5.0.1",
