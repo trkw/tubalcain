@@ -3,14 +3,42 @@ import { Link } from "react-router"
 import moment from "moment"
 import styles from "./index.css"
 
-const PagePreview = ({ __url, title, description, authors, date }) => {
+const PagePreview = ({ __url, title, description, authors, image, date }) => {
   const pageDate = moment(date ? new Date(date) : null)
   const author = authors ? authors.join(",") : undefined
+  const coverDir = "/assets/thumbnail/"
+  const imgUrl = image ? coverDir + image : undefined
+  const linkStyle = {
+    color: "white",
+    backgroundImage: "url(" + imgUrl + ")",
+    backgroundPosition: "50%",
+    backgroundSize: "cover",
+    WebkitTransition: "all",
+    msTransition: "all",
+  }
 
   return (
     <div className={ styles.card }>
-      <Link to={ __url } className={ styles.title }>
-        { title }
+      <Link to={ __url } className={ styles.title } style={ linkStyle }>
+        <div className={ styles.cardExpand } />
+        <div className={ styles.cardTitle } style={
+        {
+          height: "52px",
+          width: "100%",
+          padding: "16px",
+          background: "rgba(0, 0, 0, 0.2)",
+        }
+        }>
+          <span style={
+          {
+            color: "#fff",
+            fontSize: "14px",
+            fontWeight: "500",
+          }
+          }>
+            { title }
+          </span>
+        </div>
       </Link>
       <div>
         <p className={ styles.headData }>
@@ -42,6 +70,7 @@ PagePreview.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   authors: PropTypes.array,
+  image: PropTypes.string,
   date: PropTypes.string,
 }
 
