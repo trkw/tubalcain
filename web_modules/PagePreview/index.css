@@ -1,9 +1,9 @@
 :root {
   /* https://www.mirucon.com/2016/01/01/2016-font-family/ */
-  --font-family-sans-serif: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ Medium', 'ãƒ¡ã‚¤ãƒªã‚ª', meiryo, sans-serif;
+  --font-family-sans-serif: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'ÓÎ¥´¥·¥Ã¥¯ Medium', '¥á¥¤¥ê¥ª', meiryo, sans-serif;
 
   /* http://oshin.tokyo/2016/02/12/font-family-2016/ */
-  --font-family-serif: "æ¸¸æ˜æœ", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ï¼­ï¼³ æ˜æœ", serif;
+  --font-family-serif: "ÓÎÃ÷³¯", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "£Í£Ó Ã÷³¯", serif;
 
   --main-font-size: 18px;
   --list-font-size: 16px;
@@ -43,7 +43,6 @@
   -ms-flex-pack: stretch;
   justify-content: stretch;
   line-height: normal;
-  padding: 16px;
   -webkit-perspective-origin: 165px 56px;
   perspective-origin: 165px 56px;
   -webkit-transform-origin: 165px 56px;
@@ -55,6 +54,31 @@
   font-size: 2rem;
   background: #555;
   opacity: 1;
+}
+
+.cardExpand {
+  flex-grow: 1;
+  align-items: center;
+  color: #000;
+  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  line-height: normal;
+  padding: 16px;
+  perspective-origin: 165px 56px;
+  transform-origin: 165px 56px;
+  box-sizing: border-box;
+}
+
+.cardTitle {
+  font-size: 16px;
+  line-height: normal;
+  width: 100%;
+  background-color: transparent;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .supportingtext {
