@@ -1,7 +1,0 @@
-@custom-media --pc (min-width: 960px);
-@custom-media --sp (max-width: 959px);
-
-.content {
-  display: block;
-  margin: auto;
-}
