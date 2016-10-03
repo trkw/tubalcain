@@ -1,0 +1,186 @@
+/* Using global sytles is not recommended, prefer local styles via CSS Modules */
+
+:root {
+  --font-family-sans-serif: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+  --font-family-serif: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
+  --main-font-size: 16px;
+  --list-font-size: 16px;
+  --width-sp: 720px;
+}
+
+* {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  margin: 0;
+  font-size: var(--main-font-size);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-family: var(--font-family-serif);
+  position: relative;
+
+  &:hover .phenomic-HeadingAnchor {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 50px;
+}
+
+a {
+  color: #000;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+ul,
+ol {
+  padding-left: 28px;
+}
+
+.content {
+  display: block;
+  margin: auto;
+}
+
+.phenomic-HeadingAnchor {
+  position: absolute;
+  left: -1em;
+  width: 1em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.phenomic-BodyContainer {
+  margin-top: 60px;
+  padding: 0 20px;
+
+  & > * {
+    margin: 1em auto 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  & > :not(iframe) {
+    display: block;
+    width: var(--width-sp);
+
+    @media (max-width: 720px) {
+      width: auto;
+    }
+  }
+
+  & > iframe,
+  & > .hasImg {
+    display: block;
+    max-width: 100%;
+  }
+
+  & > .hasImg {
+    width: auto;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre {
+    background: color(#999 a(0.1));
+    overflow-x: scroll;
+
+    code {
+      display: block;
+      background: #222;
+      color: #3c9;
+      padding: 12px;
+    }
+  }
+
+  blockquote {
+    border-left: 8px solid color(#aaa a(0.2));
+    padding: 4px 20px;
+    color: #666;
+    background: color(#aaa a(0.1));
+  }
+
+  code {
+    color: #630;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 2em auto 0;
+  }
+
+  h1 {
+    font-size: 32px;
+    border-bottom: 2px solid #ddd;
+    padding: 0;
+    margin: 160px 0 60px;
+    text-align: center;
+    width: auto !important;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  li {
+    font-size: var(--list-font-size);
+    margin: 0.2em auto 0;
+
+    p {
+      font-size: var(--list-font-size);
+      margin: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border: 1px solid #999;
+    padding: 8px;
+  }
+
+  th {
+    background: #eee;
+  }
+
+  thead {
+    td,
+    th {
+      background: #eee;
+    }
+  }
+}
