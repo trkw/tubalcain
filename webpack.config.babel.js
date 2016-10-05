@@ -68,6 +68,7 @@ export default (config = {}) => {
           include: [
             path.resolve(__dirname, "scripts"),
             path.resolve(__dirname, "src"),
+            path.resolve(__dirname, "node_modules", "react-icons"),
           ],
           loaders: [
             "babel-loader?cacheDirectory",
