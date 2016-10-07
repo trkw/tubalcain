@@ -13,7 +13,7 @@ const setImgsRoot = () => {
     while (el.parentElement !== bc) {
       el = el.parentElement
     }
-    el.setAttribute("class", "hasImg")
+//    el.setAttribute("class", "hasImg")
   }
 
 }
