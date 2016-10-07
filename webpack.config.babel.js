@@ -18,7 +18,6 @@ export default (config = {}) => {
           variables: {
             mainColor: "#333",
             mainColorContrasted: "#eee",
-            spWidth: "768px",
           },
         },
       },

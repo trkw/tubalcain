@@ -1,19 +1,29 @@
+:root {
+  --spWidth: 960px;
+
+  @custom-media --sp (width < 960px);
+}
+
 .page {
   align-self: center;
   width: 100%;
-  max-width: 60rem;
-  margin: 1rem 0.75rem;
 
   &__title {
     display: block;
     text-align: center;
     margin: 80px auto;
+    padding: 0 20px;
   }
 
   &__body {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    width: var(--spWidth);
+
+    @media (--sp) {
+      width: auto;
+    }
   }
 }
 
