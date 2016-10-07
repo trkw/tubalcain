@@ -5,9 +5,9 @@
   --font-family-serif: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
   --main-font-size: 16px;
   --list-font-size: 16px;
-  --spWidth: 960px;
+  --spWidth: 61rem;
 
-  @custom-media --sp (width < 960px);
+  @custom-media --sp (width < 61rem);
 
   @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 }

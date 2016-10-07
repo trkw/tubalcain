@@ -1,6 +1,7 @@
 import React, { PropTypes } from "react"
 
 import PagePreview from "../PagePreview"
+import styles from "./index.css"
 
 const PagesList = ({ pages }) => {
   return (
@@ -8,14 +9,16 @@ const PagesList = ({ pages }) => {
     {
       pages.length
       ? (
-        <ul>
-        {
-          pages.map((page) => (
-            <li key={ page.title }><PagePreview { ...page } /></li>
-          ))
-        }
-        </ul>
-      )
+          <div className={ styles.flexGrid }>
+          {
+            pages.map((page) => (
+              <div className={ styles.flexGridBox } key={ page.title }>
+                <PagePreview { ...page } />
+              </div>
+            ))
+          }
+          </div>
+        )
       : "No posts yet."
     }
     </div>

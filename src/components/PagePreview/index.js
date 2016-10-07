@@ -1,23 +1,48 @@
 import React, { PropTypes } from "react"
 import { Link } from "react-router"
+import styles from "./index.css"
 
-const PagePreview = ({ __url, title, date }) => {
-  const pageDate = date ? new Date(date) : null
+const badgeUrl = "./assets/badge/"
+
+const PagePreview = ({ __url, title, description, badge }) => {
+
+  const isBadge = (badge) ? 1 : 0
 
   return (
-    <div>
-      <Link to={ __url }>
-        { title }
+    <div className={ styles.card }>
+      <Link to={ __url } className={ styles.cardLink }>
+        <div className={ styles.bucket }>
+          <div className={ styles.bucketMedia }>
+            <div className={ styles.badge }>
+              {
+                isBadge
+                ? (
+                  <img
+                    className={ styles.badgeImg }
+                    src={ badgeUrl + badge }
+                  />
+                  )
+                : (
+                  <img
+                    className={ styles.badgeImg }
+                    src={ badgeUrl + "default.svg" }
+                  />
+                  )
+              }
+            </div>
+          </div>
+          <div className={ styles.bucketContent }>
+            <h2 className={ styles.pathTitle }>
+              <span className={ styles.pathTitleLink }>
+                { title }
+              </span>
+            </h2>
+            <p className={ styles.description }>
+              { description }
+            </p>
+          </div>
+        </div>
       </Link>
-      {
-        pageDate &&
-        <small>
-          { " " }
-          <time key={ pageDate.toISOString() }>
-            { pageDate.toDateString() }
-          </time>
-        </small>
-      }
     </div>
   )
 }
@@ -25,7 +50,8 @@ const PagePreview = ({ __url, title, date }) => {
 PagePreview.propTypes = {
   __url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  date: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  badge: PropTypes.string.isRequired,
 }
 
 export default PagePreview

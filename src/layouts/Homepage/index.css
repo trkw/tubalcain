@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  width: 100%;
+}
+
+.headersecond {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #233;
+  text-align: center;
+}
+
+.joinus {
+  padding: 0;
+  width: 100%;
+  background: #f2f3f5;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+
+  .heading {
+    color: #000;
+  }
+}
+
+.headtitle {
+  color: #fff;
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+.tac {
+  text-align: center;
+}
+
+.postList {
+  max-width: 75rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+}

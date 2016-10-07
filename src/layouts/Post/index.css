@@ -1,7 +1,7 @@
 :root {
   --pagingBg: #555;
 
-  @custom-media --sp (width < 960px);
+  @custom-media --sp (width < 61rem);
 }
 
 .header {

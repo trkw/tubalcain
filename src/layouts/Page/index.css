@@ -1,7 +1,7 @@
 :root {
-  --spWidth: 960px;
+  --spWidth: 61rem;
 
-  @custom-media --sp (width < 960px);
+  @custom-media --sp (width < 61rem);
 }
 
 .page {

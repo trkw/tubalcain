@@ -18,6 +18,7 @@ const Header = (props, { metadata: { pkg } }) => (
           <Svg
             svg={ trkwSvg }
             className={ styles.logo }
+            cleanup
           />
         </Link>
       </div>
