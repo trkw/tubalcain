@@ -1,3 +1,8 @@
+:root {
+  @custom-media --sp (width > 48rem);
+  @custom-media --pc (width < 64rem);
+}
+
 .card {
   align-items: center;
   display: flex;
@@ -9,6 +14,10 @@
   padding: 0;
   border-radius: 8px;
   font-size: 100%;
+
+  @media (--sp) {
+    display: table;
+  }
 }
 
 .cardLink {
@@ -17,20 +26,26 @@
 
 .bucket {
   padding: 1.25em;
-  display: table;
   color: #21abc7;
   font-weight: 600;
   cursor: auto;
   text-align: left;
+
+  @media (--sp) {
+    display: table;
+  }
 }
 
 .bucketMedia {
-  float: left;
-  margin-right: 1.25em;
   color: #21abc7;
   font-weight: 600;
   text-align: left;
   line-height: 1.5;
+
+  @media (--sp) {
+    float: left;
+    margin-right: 1.25em;
+  }
 }
 
 .badge {

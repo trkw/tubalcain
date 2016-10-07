@@ -4,10 +4,10 @@ import styles from "./index.css"
 
 const badgeUrl = "./assets/badge/"
 
-const PagePreview = ({ __url, title, description, badge }) => {
+const PagePreview = ({ __url, title, description, entryread, badge }) => {
 
   const isBadge = (badge) ? 1 : 0
-
+  const subTxt = (entryread) ? entryread : description.slice(0, 25) + "..."
   return (
     <div className={ styles.card }>
       <Link to={ __url } className={ styles.cardLink }>
@@ -38,7 +38,7 @@ const PagePreview = ({ __url, title, description, badge }) => {
               </span>
             </h2>
             <p className={ styles.description }>
-              { description }
+              { subTxt }
             </p>
           </div>
         </div>
@@ -51,7 +51,8 @@ PagePreview.propTypes = {
   __url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  badge: PropTypes.string.isRequired,
+  entryread: PropTypes.string,
+  badge: PropTypes.string,
 }
 
 export default PagePreview
