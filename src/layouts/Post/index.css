@@ -37,7 +37,7 @@
   padding: 0;
   margin: 0;
 
-  @media (max-width: 720px) {
+  @media (max-width: --var(spWidth)) {
     flex-flow: column nowrap;
   }
 
@@ -55,13 +55,13 @@
         right: 0;
       }
 
-      @media (max-width: 720px) {
+      @media (max-width: --var(spWidth)) {
         border-left: none;
         border-top: 1px solid #666;
       }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: --var(spWidth)) {
       width: 100%;
     }
   }
@@ -112,7 +112,7 @@
       background-position: top;
       color: #ff4081;
 
-      @media (max-width: 720px) {
+      @media (max-width: --var(spWidth)) {
         padding: 30px 40px 10px;
       }
 
