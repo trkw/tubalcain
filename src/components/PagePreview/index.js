@@ -51,8 +51,8 @@ PagePreview.propTypes = {
   __url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  entryread: PropTypes.string.isRequired,
-  badge: PropTypes.string.isRequired,
+  entryread: PropTypes.string,
+  badge: PropTypes.string,
 }
 
 export default PagePreview
