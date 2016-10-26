@@ -123,7 +123,7 @@
     "react-topbar-progress-indicator": "^1.0.0",
     "redux": "^3.0.0",
     "style-loader": "^0.13.0",
-    "stylelint": "^7.2.0",
+    "stylelint": "^7.3.1",
     "stylelint-config-standard": "^13.0.0",
     "webpack": "^1.11.0 || ^2.1.0-beta.25",
     "whatwg-fetch": "^0.11.0"
