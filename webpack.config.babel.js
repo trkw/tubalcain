@@ -1,6 +1,7 @@
 import path from "path"
 
 import webpack from "webpack"
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ExtractTextPlugin from "extract-text-webpack-plugin"
 import { phenomicLoader } from "phenomic"
 import PhenomicLoaderFeedWebpackPlugin
@@ -252,6 +253,10 @@ export default (config = {}) => {
         disable: config.dev,
       }),
       */
+
+      new CopyWebpackPlugin([
+        {from: 'admin',  to: 'admin'},
+      ]),
 
       ...config.production && [
         // webpack 2

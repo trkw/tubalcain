@@ -6,41 +6,44 @@
   "twitter": "trkw_",
   "repository": "https://github.com/trkw/trkw.git",
   "scripts": {
-    "lint:js": "eslint --ignore-path .gitignore --fix .",
-    "lint:css": "stylelint \"src/**/*.css\"",
-    "lint": "npm-run-all --parallel lint:*",
-    "start": "phenomic start",
     "build": "phenomic build",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:js": "eslint --ignore-path .gitignore --fix .",
     "pretest": "npm run lint",
+    "start": "phenomic start",
     "test": "npm run build"
   },
   "phenomic": {
     "CNAME": true,
-    "offline": true,
-    "cache": true
+    "cache": true,
+    "offline": true
   },
   "#babel": "webpack-(development|production) are useful for webpack 2, otherwise use development|production",
   "babel": {
     "env": {
       "development": {
-        "presets": [
-          "babel-preset-latest",
-          "babel-preset-stage-1",
-          "babel-preset-react"
-        ],
         "plugins": [
           "react-hot-loader/babel"
+        ],
+        "presets": [
+          "babel-preset-latest",
+          "babel-preset-react",
+          "babel-preset-stage-1"
         ]
       },
       "production": {
         "presets": [
-          "babel-preset-react-optimize",
           "babel-preset-latest",
-          "babel-preset-stage-1",
-          "babel-preset-react"
+          "babel-preset-react",
+          "babel-preset-react-optimize",
+          "babel-preset-stage-1"
         ]
       },
       "webpack-development": {
+        "plugins": [
+          "react-hot-loader/babel"
+        ],
         "presets": [
           [
             "babel-preset-latest",
@@ -50,16 +53,12 @@
               }
             }
           ],
-          "babel-preset-stage-1",
-          "babel-preset-react"
-        ],
-        "plugins": [
-          "react-hot-loader/babel"
+          "babel-preset-react",
+          "babel-preset-stage-1"
         ]
       },
       "webpack-production": {
         "presets": [
-          "babel-preset-react-optimize",
           [
             "babel-preset-latest",
             {
@@ -68,17 +67,18 @@
               }
             }
           ],
-          "babel-preset-stage-1",
-          "babel-preset-react"
+          "babel-preset-react",
+          "babel-preset-react-optimize",
+          "babel-preset-stage-1"
         ]
       }
     }
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
     "extends": [
       "eslint-config-i-am-meticulous/react"
-    ]
+    ],
+    "parser": "babel-eslint"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
@@ -127,5 +127,8 @@
     "stylelint-config-standard": "^13.0.0",
     "webpack": "^1.11.0 || ^2.1.0-beta.25",
     "whatwg-fetch": "^0.11.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.0"
   }
 }
