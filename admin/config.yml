@@ -1,0 +1,18 @@
+backend:
+  name: trkw
+  repo: trkw/trkw # owner/repo
+  branch: master # master
+
+public_folder: "content"
+media_folder: "content/assets"
+
+collections:
+  - name: "post"
+    label: "Post"
+    folder: "content/posts"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+    meta:
+      - {label: "Publish Date", name: "date", widget: "datetime"}
