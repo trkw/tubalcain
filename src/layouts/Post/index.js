@@ -1,44 +1,30 @@
-import React, { Component, PropTypes } from "react"
-import Post from "./Post"
-import enhanceCollection from "phenomic/lib/enhance-collection"
+import React, { PropTypes } from "react"
 
-export default class PostAddNavigation extends Component {
-  static propTypes = {
-    __filename: PropTypes.string.isRequired,
-  };
+import Page from "../Page"
 
-  static contextTypes = {
-    collection: PropTypes.array.isRequired,
-  };
+const Post = (props) => {
+  // it's up to you to choose what to do with this layout ;)
+  const pageDate = props.head.date ? new Date(props.head.date) : null
 
-  get postNavigation() {
-    const collection = enhanceCollection(this.context.collection, {
-      filter: (post) => {
-        if (process.env.NODE_ENV !== "production") {
-          return (post.layout === "Post")
+  return (
+    <Page
+      { ...props }
+      header={
+        <header>
+          {
+          pageDate &&
+          <time key={ pageDate.toISOString() }>
+            { pageDate.toDateString() }
+          </time>
         }
-        else {
-          return (post.layout === "Post" && post.draft === undefined)
-        }
-      },
-      sort: "date",
-      addSiblingReferences: true,
-    })
-    const currentPost = collection
-      .find((item) => item.__filename === this.props.__filename)
-
-    return {
-      next: currentPost.next,
-      previous: currentPost.previous,
-    }
-  }
-
-  render() {
-    return (
-      <Post
-        navigation={ this.postNavigation }
-        { ...this.props }
-      />
-    )
-  }
+        </header>
+      }
+    />
+  )
 }
+
+Post.propTypes = {
+  head: PropTypes.object.isRequired,
+}
+
+export default Post
