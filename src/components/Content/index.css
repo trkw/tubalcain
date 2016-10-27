@@ -3,8 +3,4 @@
   display: flex;
   align-items: stretch;
   flex-direction: column;
-  background: #f6f8f8;
-  color: #455;
-  font-size: 18px;
-  padding-top: 60px;
 }

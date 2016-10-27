@@ -12,36 +12,6 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
         { property: "og:site_name", content: pkg.name },
         { name: "twitter:site", content: `@${ pkg.twitter }` },
       ] }
-      link={ [
-        {
-          "rel": "apple-touch-icon",
-          "sizes": "180x180",
-          "href": "/assets/apple-touch-icon.png",
-        },
-        {
-          "rel": "icon",
-          "type": "image/png",
-          "href": "/assets/favicon-32x32.png",
-          "sizes": "32x32",
-        },
-        {
-          "rel": "icon",
-          "type": "image/png",
-          "href": "/assets/favicon-32x32.png",
-          "sizes": "16x16",
-        },
-        {
-          "rel": "manifest",
-          "type": "image/png",
-          "href": "/assets/manifest.json",
-          "sizes": "16x16",
-        },
-        {
-          "rel": "mask-icon",
-          "href": "/assets/trkw.svg",
-          "color": "#4078c0",
-        },
-      ] }
       script={ [
         { src: "https://cdn.polyfill.io/v2/polyfill.min.js" },
       ] }

@@ -1,6 +1,7 @@
 .footer {
+  color: var(--mainColorContrasted);
+  background: var(--mainColor);
   text-align: center;
-  padding: 40px 0;
 }
 
 .phenomicReference {

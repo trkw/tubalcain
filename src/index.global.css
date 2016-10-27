@@ -1,155 +1,82 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
 
-:root {
-  --font-family-sans-serif: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
-  --font-family-serif: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
-  --main-font-size: 16px;
-  --list-font-size: 16px;
-  --spWidth: 61rem;
+/*
+ * box model like it should be
+ *
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+html { box-sizing: border-box; }
 
-  @custom-media --sp (width < 61rem);
-
-  @custom-selector :--heading h1, h2, h3, h4, h5, h6;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-* {
-  box-sizing: border-box;
-  word-break: break-word;
+/*
+ * kill document defaults margin & padding. We all do that all the time, right ?
+ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * page styles
+ */
+html {
+  min-height: 100%;
+  background: color(#deecf1 a(0.4));
 }
 
 body {
-  font-family: var(--font-family-sans-serif);
-  margin: 0;
-  font-size: var(--main-font-size);
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-:--heading {
-  font-weight: 400;
-  font-family: var(--font-family-serif);
-  position: relative;
-  line-height: 1.5;
+/*
+ * .phenomic-HeadingAnchor
+ *
+ * anchors for markdown headings, generated via markdown renderer, so require
+ * global styling
+ */
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
 
-  &:hover .phenomic-HeadingAnchor {
+:--headings {
+  position: relative;
+}
+
+:root {
+  --phenomic-HeadingAnchor-width: 1.4rem;
+  --phenomic-HeadingAnchor-margin: 0.4rem;
+}
+
+.phenomic-HeadingAnchor {
+  display: inline-block;
+  text-align: center;
+  margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
+  margin-right: var(--phenomic-HeadingAnchor-margin);
+  width: var(--phenomic-HeadingAnchor-width);
+  line-height: var(--phenomic-HeadingAnchor-width);
+  text-decoration: none;
+  opacity: 0.1;
+  transition: opacity 0.2s;
+
+  @nest :--headings:hover & {
     opacity: 1;
   }
 }
 
-h1 {
-  font-size: 50px;
-}
-
+/* minimal styling, prefer removing this and use local styles */
 a {
-  color: #000;
-
-  &:hover {
-    opacity: 0.7;
-  }
+  color: #0e63e3;
 }
 
-ul,
-ol {
-  padding-left: 28px;
-}
-
-code {
-  overflow-x: auto;
-  background: #cdd;
-  color: #233;
-  padding: 0 0.5em;
-}
-
-pre > code {
-  display: block;
-  padding: 0.5em;
-}
-
-a {
-  color: #4078c0;
-  text-decoration: none;
-  font-weight: 700;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.content {
-  display: block;
-  margin: auto;
-}
-
-.phenomic-HeadingAnchor {
-  position: absolute;
-  left: -1em;
-  width: 1em;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  text-decoration: none;
-}
-
-.phenomic-BodyContainer {
-  & h1 {
-    border-bottom: 1px solid #899;
-    padding: 0;
-    margin: 160px 0 60px;
-  }
-
-  & blockquote {
-    border-left: 8px solid color(#aaa a(0.2));
-    padding: 4px 20px;
-    color: #666;
-    background: color(#aaa a(0.1));
-  }
-
-  & :--heading {
-    margin: 2em auto 0.8em;
-  }
-
-  & li {
-    font-size: var(--list-font-size);
-    margin: 0.2em auto 0;
-
-    & p {
-      font-size: var(--list-font-size);
-      margin: 0;
-    }
-  }
-
-  & table {
-    border-collapse: collapse;
-  }
-
-  & td,
-  & th {
-    border: 1px solid #999;
-    padding: 8px;
-  }
-
-  & th {
-    background: #eee;
-  }
-
-  & thead {
-    & td,
-    & th {
-      background: #eee;
-    }
-  }
-
-  & iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  & iframe,
-  & img {
-    max-width: 100%;
-  }
-
-  & iframe {
-    background: #688;
-  }
+/* handy for content */
+img {
+  max-width: 100%;
 }

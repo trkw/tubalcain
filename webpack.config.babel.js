@@ -1,7 +1,6 @@
 import path from "path"
 
 import webpack from "webpack"
-import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ExtractTextPlugin from "extract-text-webpack-plugin"
 import { phenomicLoader } from "phenomic"
 import PhenomicLoaderFeedWebpackPlugin
@@ -17,7 +16,7 @@ export default (config = {}) => {
       features: {
         customProperties: {
           variables: {
-            mainColor: "#333",
+            mainColor: "#111",
             mainColorContrasted: "#eee",
           },
         },
@@ -45,7 +44,7 @@ export default (config = {}) => {
         // allow to generate collection and rss feed.
         {
           // phenomic requirement
-          test: /\.md$/,
+          test: /\.(md|markdown)$/,
           loader: phenomicLoader,
           query: {
             context: path.join(__dirname, config.source),
@@ -69,7 +68,6 @@ export default (config = {}) => {
           include: [
             path.resolve(__dirname, "scripts"),
             path.resolve(__dirname, "src"),
-            path.resolve(__dirname, "node_modules", "react-icons"),
           ],
           loaders: [
             "babel-loader?cacheDirectory",
@@ -155,23 +153,43 @@ export default (config = {}) => {
         // and use the following one
         // ! \\ If you want global CSS for node_modules only, just uncomment
         // this section and the `include` part
-        // {
-        //   test: /\.css$/,
-        //   // depending on your need, you might need to scope node_modules
-        //   // for global CSS if you want to keep CSS Modules by default
-        //   // for your own CSS. If so, uncomment the line below
-        //   // include: path.resolve(__dirname, "node_modules"),
-        //   loader: ExtractTextPlugin.extract({
-        //     fallbackLoader: "style-loader",
-        //     loader: [
-        //       "css-loader",
-        //       {
-        //         loader: "postcss-loader",
-        //         query: { "plugins": postcssPlugins },
-        //       },
-        //     ]
-        //   }),
-        // },
+        // // webpack 1
+        /*
+        {
+          test: /\.css$/,
+          // depending on your need, you might need to scope node_modules
+          // for global CSS if you want to keep CSS Modules by default
+          // for your own CSS. If so, uncomment the line below
+          // include: path.resolve(__dirname, "node_modules"),
+          loader: ExtractTextPlugin.extract(
+            "style-loader",
+            loader: [
+              "css-loader",
+              "postcss-loader",
+            ].join("!")
+          ),
+        },
+        */
+        // // webpack 2
+        /*
+        {
+          test: /\.css$/,
+          // depending on your need, you might need to scope node_modules
+          // for global CSS if you want to keep CSS Modules by default
+          // for your own CSS. If so, uncomment the line below
+          // include: path.resolve(__dirname, "node_modules"),
+          loader: ExtractTextPlugin.extract({
+            fallbackLoader: "style-loader",
+            loader: [
+              "css-loader",
+              {
+                loader: "postcss-loader",
+                query: { "plugins": postcssPlugins },
+              },
+            ]
+          }),
+        },
+        */
         // ! \\ if you want to use Sass or LESS, you can add sass-loader or
         // less-loader after postcss-loader (or replacing it).
         // ! \\ You will also need to adjust the file extension
@@ -253,10 +271,6 @@ export default (config = {}) => {
         disable: config.dev,
       }),
       */
-
-      new CopyWebpackPlugin([
-        {from: 'admin',  to: 'admin'},
-      ]),
 
       ...config.production && [
         // webpack 2
