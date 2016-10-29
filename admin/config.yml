@@ -9,7 +9,7 @@ media_folder: "content/assets"
 collections:
   - name: "post"
     label: "Post"
-    folder: "content/posts"
+    folder: "posts"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
