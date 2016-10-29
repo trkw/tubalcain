@@ -5,12 +5,12 @@
   "twitter": "trkw_",
   "repository": "https://github.com/trkw/trkw.git",
   "scripts": {
-    "lint:js": "eslint --ignore-path .gitignore --fix .",
-    "lint:css": "stylelint \"src/**/*.css\"",
-    "lint": "npm-run-all --parallel lint:*",
-    "start": "phenomic start",
     "build": "phenomic build",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:js": "eslint --ignore-path .gitignore --fix .",
     "pretest": "npm run lint",
+    "start": "phenomic start",
     "test": "npm run build"
   },
   "phenomic": {
@@ -20,26 +20,31 @@
   "babel": {
     "env": {
       "development": {
+        "plugins": [
+          "babel-plugin-transform-react-jsx-self",
+          "babel-plugin-transform-react-jsx-source",
+          "react-hot-loader/babel"
+        ],
         "presets": [
           "babel-preset-latest",
-          "babel-preset-stage-1",
-          "babel-preset-react"
-        ],
-        "plugins": [
-          "babel-plugin-transform-react-jsx-source",
-          "babel-plugin-transform-react-jsx-self",
-          "react-hot-loader/babel"
+          "babel-preset-react",
+          "babel-preset-stage-1"
         ]
       },
       "production": {
         "presets": [
-          "babel-preset-react-optimize",
           "babel-preset-latest",
-          "babel-preset-stage-1",
-          "babel-preset-react"
+          "babel-preset-react",
+          "babel-preset-react-optimize",
+          "babel-preset-stage-1"
         ]
       },
       "webpack-development": {
+        "plugins": [
+          "babel-plugin-transform-react-jsx-self",
+          "babel-plugin-transform-react-jsx-source",
+          "react-hot-loader/babel"
+        ],
         "presets": [
           [
             "babel-preset-latest",
@@ -49,18 +54,12 @@
               }
             }
           ],
-          "babel-preset-stage-1",
-          "babel-preset-react"
-        ],
-        "plugins": [
-          "babel-plugin-transform-react-jsx-source",
-          "babel-plugin-transform-react-jsx-self",
-          "react-hot-loader/babel"
+          "babel-preset-react",
+          "babel-preset-stage-1"
         ]
       },
       "webpack-production": {
         "presets": [
-          "babel-preset-react-optimize",
           [
             "babel-preset-latest",
             {
@@ -69,15 +68,16 @@
               }
             }
           ],
-          "babel-preset-stage-1",
-          "babel-preset-react"
+          "babel-preset-react",
+          "babel-preset-react-optimize",
+          "babel-preset-stage-1"
         ]
       }
     }
   },
   "eslintConfig": {
-    "root": true,
-    "extends": "./node_modules/phenomic/lib/eslint-config-recommended/index.js"
+    "extends": "./node_modules/phenomic/lib/eslint-config-recommended/index.js",
+    "root": true
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
@@ -94,6 +94,7 @@
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-1": "^6.13.0",
     "classnames": "^2.2.5",
+    "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.25.0",
     "eslint": "^3.7.1",
     "eslint-loader": "^1.5.0",
@@ -104,6 +105,7 @@
     "invariant": "^2.1.1",
     "json-loader": "^0.5.2",
     "npm-run-all": "^1.7.0",
+    "phenomic": "^0.17.12",
     "postcss-browser-reporter": "^0.4.0",
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.13.0",
@@ -122,7 +124,6 @@
     "stylelint": "^7.2.0",
     "stylelint-config-standard": "^13.0.0",
     "webpack": "^1.11.0",
-    "whatwg-fetch": "^0.11.0",
-    "phenomic": "^0.17.12"
+    "whatwg-fetch": "^0.11.0"
   }
 }
