@@ -1,6 +1,7 @@
 import path from "path"
 
 import webpack from "webpack"
+import CopyWebpackPlugin from "copy-webpack-plugin"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
 import { phenomicLoader } from "phenomic"
 import PhenomicLoaderFeedWebpackPlugin
@@ -241,6 +242,9 @@ export default (config = {}) => {
         },
       }),
       */
+      new CopyWebpackPlugin([
+        {from: 'admin',  to: 'admin'},
+      ]),
 
       new PhenomicLoaderFeedWebpackPlugin({
         // here you define generic metadata for your feed
