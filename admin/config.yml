@@ -3,8 +3,8 @@ backend:
   repo: trkw/trkw-posts
   branch: master
 
-media_folder: "content/assets"
-public_folder: "content"
+media_folder: "/assets"
+public_folder: "/"
 
 collections:
   - name: "post"
