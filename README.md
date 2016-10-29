@@ -1,6 +1,6 @@
 # [trkw](http://trkw.jp/) [![wercker status](https://app.wercker.com/status/67eb2b3bccd91b0ce2444da3d342ec26/s/master "wercker status")](https://app.wercker.com/project/byKey/67eb2b3bccd91b0ce2444da3d342ec26)  [![Code Climate](http://img.shields.io/codeclimate/github/trkw/trkw.svg)](https://codeclimate.com/github/trkw/trkw) [![Dependency Status](https://david-dm.org/trkw/trkw.svg)](https://david-dm.org/trkw/trkw) [![Gitter](https://badges.gitter.im/trkw/Lobby.svg)](https://gitter.im/trkw/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-[trkw.me](https://trkw.me)のリポジトリです。
+[trkw.jp](https://trkw.jp)のリポジトリです。
 
 * [Phenomic](https://phenomic.io/) + [Wercker](http://wercker.com/) + [CloudFlare](https://www.cloudflare.com/) + [GitHub Pages](https://pages.github.com/)で動作しています。
 * サイトのデザインなどに対して、修正などある方はこちらのリポジトリにてPull Requestしてください。
