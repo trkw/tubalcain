@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: trkw/trkw
+  repo: trkw/trkw-posts
   branch: master
 
 media_folder: "content/assets"
@@ -9,7 +9,7 @@ public_folder: "content"
 collections:
   - name: "post"
     label: "Post"
-    folder: "content/posts"
+    folder: "posts"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
