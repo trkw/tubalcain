@@ -4,11 +4,10 @@ backend:
   branch: master
 
 media_folder: "/assets"
-public_folder: "/"
 
 collections:
   - name: "post"
-    label: "Post"
+    label: "Posts"
     folder: "posts"
     create: true
     fields:
