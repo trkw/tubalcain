@@ -1,5 +1,5 @@
 backend:
-  name: github-api
+  name: github
   repo: trkw/trkw
   branch: master
 
