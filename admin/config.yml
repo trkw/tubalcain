@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: trkw/trkw
+  repo: trkw/tubalcain
   branch: master
 
 public_folder: "/content"
