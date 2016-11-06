@@ -4,8 +4,6 @@
 
 * [Phenomic](https://phenomic.io/) + [Wercker](http://wercker.com/) + [CloudFlare](https://www.cloudflare.com/) + [GitHub Pages](https://pages.github.com/)で動作しています。
 * サイトのデザインなどに対して、修正などある方はこちらのリポジトリにてPull Requestしてください。
-* 記事の内容などに対して、修正などある方は [trkw-posts](https://github.com/trkw/trkw-posts)にてPull Requestしてください。
-* デプロイ先は、[trkw.github.io](https://github.com/trkw/trkw.github.io)となります。
 
 ## Install dependencies
 
