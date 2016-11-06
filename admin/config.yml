@@ -3,8 +3,8 @@ backend:
   repo: trkw/tubalcain
   branch: master
 
-public_folder: "/contents"
-media_folder: "/contents/assets"
+public_folder: "content"
+media_folder: "content/assets"
 
 collections:
   - name: "post"
