@@ -4,7 +4,7 @@ backend:
   branch: master
 
 media_folder: "/assets"
-public_folder: "/"
+public_folder: "/content"
 
 collections:
   - name: "post"
