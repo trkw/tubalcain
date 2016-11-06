@@ -4,7 +4,7 @@
 
 ![velazquez forge-vulcan](https://cloud.githubusercontent.com/assets/2557813/20035951/0b217356-a43c-11e6-80b3-e47889f176cf.jpg)
 
-* [Phenomic](https://phenomic.io/) + [Wercker](http://wercker.com/) + [CloudFlare](https://www.cloudflare.com/) + [GitHub Pages](https://pages.github.com/)で動作しています。
+* [Phenomic](https://phenomic.io/) で動作しています。
 * サイトのデザインなどに対して、修正などある方はこちらのリポジトリにてPull Requestしてください。
 
 ## Install dependencies
