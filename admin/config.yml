@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: trkw/trkw-posts
+  repo: trkw/trkw
   branch: master
 
 media_folder: "/assets"
