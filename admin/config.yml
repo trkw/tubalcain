@@ -3,13 +3,12 @@ backend:
   repo: trkw/tubalcain
   branch: master
 
-public_folder: "content"
 media_folder: "content/assets"
 
 collections:
   - name: "post"
     label: "Post"
-    folder: "posts"
+    folder: "content/posts"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
