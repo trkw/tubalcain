@@ -1,7 +1,6 @@
 import path from "path"
 
 import webpack from "webpack"
-import CopyWebpackPlugin from "copy-webpack-plugin"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
 import { phenomicLoader } from "phenomic"
 import PhenomicLoaderFeedWebpackPlugin
@@ -204,7 +203,7 @@ export default (config = {}) => {
 
         // copy assets and return generated path in js
         {
-          test: /\.(html|ico|jpe?g|png|gif)$/,
+          test: /\.(html|ico|jpe?g|png|gif|eot|otf|webp|ttf|woff|woff2)$/,
           loader: "file-loader",
           query: {
             name: "[path][name].[hash].[ext]",
@@ -242,9 +241,6 @@ export default (config = {}) => {
         },
       }),
       */
-      new CopyWebpackPlugin([
-        {from: 'admin',  to: 'admin'},
-      ]),
 
       new PhenomicLoaderFeedWebpackPlugin({
         // here you define generic metadata for your feed
